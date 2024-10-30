@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
     MyHomePage({super.key});
-
-    @override
-    Widget build(BuildContext context) {
-	return Scaffold(
-	);
-    }
+    final String npm = '2306241751'; // NPM
+    final String name = 'Makarim Zufar Prambudyo'; // Nama
+    final String className = 'PBP D'; // Kelas
     final List<ItemHomepage> items = [
     ItemHomepage("Lihat Mood", Icons.mood),
     ItemHomepage("Tambah Mood", Icons.add),
@@ -92,13 +89,6 @@ class MyHomePage extends StatelessWidget {
       ),
     );
   }
-
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  final String npm = '2306241751'; // NPM
-  final String name = 'Makarim Zufar Prambudyo'; // Nama
-  final String className = 'PBP D'; // Kelas
 }
 
 class InfoCard extends StatelessWidget {
@@ -145,9 +135,9 @@ class ItemHomepage {
 class ItemCard extends StatelessWidget {
   // Menampilkan kartu dengan ikon dan nama.
 
-  final ItemHomepage item; 
-  
-  const ItemCard(this.item, {super.key}); 
+  final ItemHomepage item;
+
+  const ItemCard(this.item, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -156,16 +146,15 @@ class ItemCard extends StatelessWidget {
       color: Theme.of(context).colorScheme.secondary,
       // Membuat sudut kartu melengkung.
       borderRadius: BorderRadius.circular(12),
-      
+
       child: InkWell(
         // Aksi ketika kartu ditekan.
         onTap: () {
           // Menampilkan pesan SnackBar saat kartu ditekan.
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
-            ..showSnackBar(
-              SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))
-            );
+            ..showSnackBar(SnackBar(
+                content: Text("Kamu telah menekan tombol ${item.name}!")));
         },
         // Container untuk menyimpan Icon dan Text
         child: Container(
